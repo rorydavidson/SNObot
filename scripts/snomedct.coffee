@@ -20,7 +20,7 @@ Handlebars = require 'handlebars'
 
 module.exports = (robot) ->
 
-  robot.respond /sctid (.*)/i, (res) ->
+  robot.hear /sctid (.*)/i, (res) ->
     sctid = res.match[1]
     robot.http("https://sct-rest.ihtsdotools.org/api/snomed/en-edition/v20160731/query/concepts/#{sctid}")
     .header('Accept', 'application/json')
@@ -31,7 +31,7 @@ module.exports = (robot) ->
 
 
 
-  robot.respond /concept (.*)/i, (res) ->
+  robot.hear /concept (.*)/i, (res) ->
     concept = res.match[1]
     robot.http("http://browser.ihtsdotools.org/api/snomed/en-edition/v20160731/descriptions?query=#{concept}&statusFilter=activeOnly")
     .header('Accept', 'application/json')
