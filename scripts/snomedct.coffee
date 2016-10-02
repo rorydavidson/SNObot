@@ -27,7 +27,7 @@ module.exports = (robot) ->
     .get() (err, response, body) ->
 
       data = JSON.parse body
-      res.send "For SCTID #{sctid}, the FSN is #{data.fsn}"
+      res.send "For SCTID #{sctid}, the FSN is #{data.fsn} and the URL/URI is http://snomed.info/id/#{sctid}"
 
 
 
@@ -38,4 +38,4 @@ module.exports = (robot) ->
     .get() (err, response, body) ->
 
       data = JSON.parse body
-      res.send "For concept #{concept}, there are #{data.details.total} results and the first one has an SCTID of #{data.matches[0].conceptId} and the FSN, #{data.matches[0].fsn}"
+      res.send "For concept #{concept}, there are #{data.details.total} results and the first one has an SCTID of #{data.matches[0].conceptId} and the FSN, #{data.matches[0].fsn} with a URL/URI of http://snomed.info/id/#{sctid}"
