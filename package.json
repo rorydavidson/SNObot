@@ -6,6 +6,7 @@
   "description": "A bot to return SNOMED CT information on demand",
   "dependencies": {
     "hubot": "^2.19.0",
+    "hubot-diagnostics": "0.0.1",
     "hubot-help": "^0.2.0",
     "hubot-hipchat": "^2.12.0-6",
     "hubot-redis-brain": "0.0.3",
