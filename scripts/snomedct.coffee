@@ -9,7 +9,7 @@
 # HUBOT_HIPCHAT_ROOMS="..."
 #
 # Commands:
-#   /concept <sarch term> - search SNOMED CT for a given term
+#   /concept <search term> - search SNOMED CT for a given term
 #   /sctid <id> - return the term for the give SNOMED CT identifier
 #
 # Notes:
