@@ -1,22 +1,38 @@
 # Description:
-#   SNOMEDCT scripts for hubot.
+#   SNOMED CT script for hubot.
 #
-#   Further scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
+# Configuration:
+# HUBOT_HIPCHAT_TOKEN="..."
+# HUBOT_HIPCHAT_JID="..."
+# HUBOT_HIPCHAT_NAME="..."
+# HUBOT_HIPCHAT_PASSWORD="..."
+# HUBOT_HIPCHAT_ROOMS="..."
+#
+# Commands:
+#   /concept <sarch term> - search SNOMED CT for a given term
+#   /sctid <id> - return the term for the give SNOMED CT identifier
+#
+# Notes:
+#   Currently focused on running with the HipChat adapter,
+#   https://github.com/hipchat/hubot-hipchat
+#
+# Author:
+#   rorydavidson
 
 # required for https calls
-https = require 'https'
+#https = require 'https'
 
 # required for http calls
-http = require 'http'
+#http = require 'http'
 
 # required to load xmpp_jid,api_id file mapping
-fs = require 'fs'
+#fs = require 'fs'
 
 # csv parser
-parse = require 'csv-parse'
+#parse = require 'csv-parse'
 
 # Handlerbars templating engine
-Handlebars = require 'handlebars'
+#Handlebars = require 'handlebars'
 
 module.exports = (robot) ->
 
