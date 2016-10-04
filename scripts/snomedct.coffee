@@ -7,14 +7,16 @@
 # HUBOT_HIPCHAT_NAME="..."
 # HUBOT_HIPCHAT_PASSWORD="..."
 # HUBOT_HIPCHAT_ROOMS="..."
+# HUBOT_SLACK_TOKEN="..."
 #
 # Commands:
-#   /concept <search term> - search SNOMED CT for a given term
-#   /sctid <id> - return the term for the give SNOMED CT identifier
+#   @sctbot concept <search term> - search SNOMED CT for a given term
+#   @sctbot sctid <id> - return the term for the give SNOMED CT identifier
 #
 # Notes:
-#   Currently focused on running with the HipChat adapter,
+#   Currently focused on running with the HipChat & Slack adapters,
 #   https://github.com/hipchat/hubot-hipchat
+#   https://github.com/slackhq/hubot-slack
 #
 # Author:
 #   rorydavidson
