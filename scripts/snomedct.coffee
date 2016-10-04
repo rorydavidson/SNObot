@@ -56,4 +56,4 @@ module.exports = (robot) ->
     .get() (err, response, body) ->
 
       data = JSON.parse body
-      res.send "For concept #{concept}, there are #{data.details.total} results and the first one has an SCTID of #{data.matches[0].conceptId} and the FSN, #{data.matches[0].fsn} with a URL/URI of http://snomed.info/id/#{data.matches[0].conceptId}"
+      res.send "For concept #{concept}, there are #{data.details.total} matching descriptions and the first one has an SCTID of #{data.matches[0].conceptId} and the FSN, #{data.matches[0].fsn} with a URL/URI of http://snomed.info/id/#{data.matches[0].conceptId}"
