@@ -1,6 +1,6 @@
 {
   "name": "SNObot",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "author": "rory.davidson@gmail.com",
   "description": "A bot to return SNOMED CT information on demand",
