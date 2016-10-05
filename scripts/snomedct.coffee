@@ -45,7 +45,10 @@ module.exports = (robot) ->
     .get() (err, response, body) ->
 
       data = JSON.parse body
-      res.send "For SCTID #{sctid}, the FSN is #{data.fsn} and the URL/URI is http://snomed.info/id/#{sctid}"
+      try
+        res.send "For SCTID #{sctid}, the FSN is #{data.fsn} and the URL/URI is http://snomed.info/id/#{sctid}"
+      catch
+        res.send "Sorry, I cannot find any matching concepts for #{sctid}. Please try again."
 
 
 
@@ -56,4 +59,7 @@ module.exports = (robot) ->
     .get() (err, response, body) ->
 
       data = JSON.parse body
-      res.send "For concept #{concept}, there are #{data.details.total} matching descriptions and the first one has an SCTID of #{data.matches[0].conceptId} and the FSN, #{data.matches[0].fsn} with a URL/URI of http://snomed.info/id/#{data.matches[0].conceptId}"
+      try
+        res.send "For concept #{concept}, there are #{data.details.total} matching descriptions and the first one has an SCTID of #{data.matches[0].conceptId} and the FSN, #{data.matches[0].fsn} with a URL/URI of http://snomed.info/id/#{data.matches[0].conceptId}"
+      catch error
+        res.send "Sorry, I cannot find any matching descriptions for #{concept}. Please try again."
