@@ -10,7 +10,7 @@
 # HUBOT_SLACK_TOKEN="..."
 #
 # Commands:
-#   @sctbot concept <search term> - search SNOMED CT for a given term
+#   @sctbot sctconcept <search term> - search SNOMED CT for a given term
 #   @sctbot sctid <id> - return the term for the give SNOMED CT identifier
 #
 # Notes:
@@ -52,7 +52,7 @@ module.exports = (robot) ->
 
 
 
-  robot.hear /concept (.*)/i, (res) ->
+  robot.hear /sctconcept (.*)/i, (res) ->
     concept = res.match[1]
     robot.http("http://browser.ihtsdotools.org/api/snomed/en-edition/v20160731/descriptions?query=#{concept}&statusFilter=activeOnly")
     .header('Accept', 'application/json')
