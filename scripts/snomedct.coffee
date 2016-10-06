@@ -10,8 +10,8 @@
 # HUBOT_SLACK_TOKEN="..."
 #
 # Commands:
-#   @sctbot sctconcept <search term> - search SNOMED CT for a given term
-#   @sctbot sctid <id> - return the term for the give SNOMED CT identifier
+#   sno-bot concept <search term> - search SNOMED CT for a given term
+#   sno-bot sctid <id> - return the term for the give SNOMED CT identifier
 #
 # Notes:
 #   Currently focused on running with the HipChat & Slack adapters,
@@ -38,7 +38,7 @@
 
 module.exports = (robot) ->
 
-  robot.hear /sctid (.*)/i, (res) ->
+  robot.hear /sno-bot sctid (.*)/i, (res) ->
     sctid = res.match[1]
     robot.http("https://sct-rest.ihtsdotools.org/api/snomed/en-edition/v20160731/query/concepts/#{sctid}")
     .header('Accept', 'application/json')
@@ -52,7 +52,7 @@ module.exports = (robot) ->
 
 
 
-  robot.hear /sctconcept (.*)/i, (res) ->
+  robot.hear /sno-bot concept (.*)/i, (res) ->
     concept = res.match[1]
     robot.http("http://browser.ihtsdotools.org/api/snomed/en-edition/v20160731/descriptions?query=#{concept}&statusFilter=activeOnly")
     .header('Accept', 'application/json')
