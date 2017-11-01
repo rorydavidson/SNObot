@@ -40,7 +40,7 @@ module.exports = (robot) ->
 
   robot.hear /sno-bot sctid (.*)/i, (res) ->
     sctid = res.match[1]
-    robot.http("https://sct-rest.ihtsdotools.org/api/snomed/en-edition/v20160731/query/concepts/#{sctid}")
+    robot.http("https://sct-rest.ihtsdotools.org/api/snomed/en-edition/v20170731/query/concepts/#{sctid}")
     .header('Accept', 'application/json')
     .get() (err, response, body) ->
 
@@ -54,7 +54,7 @@ module.exports = (robot) ->
 
   robot.hear /sno-bot concept (.*)/i, (res) ->
     concept = res.match[1]
-    robot.http("http://browser.ihtsdotools.org/api/snomed/en-edition/v20160731/descriptions?query=#{concept}&statusFilter=activeOnly")
+    robot.http("http://browser.ihtsdotools.org/api/v2/snomed/en-edition/v20170731/descriptions?query=#{concept}&statusFilter=activeOnly")
     .header('Accept', 'application/json')
     .get() (err, response, body) ->
 
